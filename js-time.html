@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<title>JavaScript Date.UTC()</title>		
+	</head>
+	<body>
+		<script type="text/javascript">
+			//document.write(Date.UTC(1970, 0, 2)/3600000);
+		
+			var d = new Date( '1970-1-1 8:0' );
+			var t1 = d.getTime()/1000;
+			document.write( t1+'-----'+d.getTimezoneOffset() );
+			
+			var str = '[{ "0":"bit_name","v":["0-name","1-name"] },{ "1":"bit_name","v":["0-name","1-name"] }]';
+			var obj = JSON.parse( str );
+		</script>
+
+	</body>
+</html>

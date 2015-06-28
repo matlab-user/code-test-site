@@ -1,0 +1,5 @@
+var ev = document.createEvent('HTMLEvents');
+ev.initEvent( 'click', false, true);
+download_a[0].dispatchEvent(ev);
+
+download_a[0]--需要触发事件的对象
