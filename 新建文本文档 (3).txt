@@ -1,0 +1,28 @@
+1）sudo apt-get install libjpeg-dev
+2）sudo apt-get install libfreetype6-dev
+3）sudo easy_install PIL
+
+easy_install 的安装
+sudo apt-get install python-setuptools python-dev build-essential
+
+安装pygame
+sudo apt-get install python-pygame
+
+安装SDL，pygame需要
+sudo aptitude install libsdl1.2-dev
+
+
+
+如果python没有安装开发库，也会导致pygame不能安装
+sudo apt-get install python2.6-dev
+根据机器python版本安装相应的开发库。我的python是2.6.4版本，所以安装2.6的开发库。
+还需安装python的numeric库，用于处理向量和数值计算，某些游戏需要。
+sudo apt-get install python-numeric python-numpy python-scipy
+
+
+sudo apt-get install libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev libsdl-gfx1.2-dev libsdl-net1.2-dev libsdl-sge-dev libsdl-sound1.2-dev libportmidi-dev libsmpeg-dev
+其中mixer是混音库，sound是声音库，ttf是字体库，gfx,sge,image都是图形处理的。smpeg是播放mpeg电影的。midi是处理midi声音的。
+
+
+python config.py
+sudo python setup.py

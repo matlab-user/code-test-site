@@ -1,0 +1,142 @@
+import pygame.camera
+pygame.camera.init()
+cam = pygame.camera.Camera(pygame.camera.list_cameras()[0])
+cam.start()
+img = cam.get_image()
+import pygame.image
+pygame.image.save(img, "photo.bmp")
+pygame.camera.quit()
+
+
+
+
+
+#!/usr/bin/env python 
+# -*- coding: utf-8 -*- 
+
+from VideoCapture import Device   
+import time   
+import sys, pygame   
+
+pygame.init()   
+
+size = width, height = 620, 485 
+speed = [2, 2]   
+black = 0, 0, 0 
+
+pygame.display.set_caption('视频窗口@dyx1024')    
+screen = pygame.display.set_mode(size)   
+
+#抓取频率，抓取一次 
+SLEEP_TIME_LONG = 0.1 
+
+#初始化摄像头 
+cam = Device(devnum=0, showVideoWindow=0)   
+
+whileTrue:   
+
+#抓图 
+    cam.saveSnapshot('test.jpg', timestamp=3, boldfont=1, quality=75)   
+
+#加载图像 
+    image = pygame.image.load('test.jpg')   
+
+#传送画面 
+    screen.blit(image, speed)   
+
+#显示图像 
+    pygame.display.flip()   
+#休眠一下，等待一分钟 
+    time.sleep(SLEEP_TIME_LONG)   
+
+
+
+
+
+
+
+
+from VideoCapture import Device
+import ImageDraw, sys, pygame, time
+from pygame.locals import *
+from PIL import ImageEnhance
+res = (640,480)
+pygame.init()
+cam = Device()
+cam.setResolution(res[0],res[1])
+screen = pygame.display.set_mode((640,480))
+pygame.display.set_caption(Webcam)
+pygame.font.init()
+font = pygame.font.SysFont("Courier",11)
+def disp(phrase,loc):
+    s = font.render(phrase, True, (200,200,200))
+    sh = font.render(phrase, True, (50,50,50))
+    screen.blit(sh, (loc[0]+1,loc[1]+1))
+    screen.blit(s, loc)
+brightness = 1.0
+contrast = 1.0
+shots = 0
+while 1:
+    camshot = ImageEnhance.Brightness(cam.getImage()).enhance(brightness)
+    camshot = ImageEnhance.Contrast(camshot).enhance(contrast)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT: sys.exit()
+    keyinput = pygame.key.get_pressed()
+    if keyinput[K_1]: brightness -= .1
+    if keyinput[K_2]: brightness += .1
+    if keyinput[K_3]: contrast -= .1
+    if keyinput[K_4]: contrast += .1
+    if keyinput[K_q]: cam.displayCapturePinProperties()
+    if keyinput[K_w]: cam.displayCaptureFilterProperties()
+    if keyinput[K_s]:
+        filename = str(time.time()) + ".jpg"
+        cam.saveSnapshot(filename, quality=80, timestamp=0)
+        shots += 1
+    camshot = pygame.image.frombuffer(camshot.tostring(), res, "RGB")
+    screen.blit(camshot, (0,0))
+    disp("S:" + str(shots), (10,4))
+    disp("B:" + str(brightness), (10,16))
+    disp("C:" + str(contrast), (10,28))
+    pygame.display.flip()这段代码中的一些要点的解释如下：
+
+第15行的那个函数是在视频上显示些信息。这个例子中，显示的是抓图的数量以及当前的亮度和对比度。这个函数先显示深灰色的文本，然后偏移几个像素，再显示浅灰色的，这样可以有阴影的效果。 
+第26行是在调整亮度和对比度。30-33行是在设置数字键1-4用于调整亮度和对比度。 
+34 和35行是在设置 ‘q’ 和 ‘w’ 来显示摄像头的对话框。在那里你可以调整分辨率和暴光度等等。 
+36行及以下的代码，是在存一个抓图文件。文件名中使用了当前时间。. 
+希望这个小程序能给你开启一个如何写摄像头的程序。
+
+
+linux环境
+import pygame
+import Image
+from pygame.locals import *
+import sys
+
+import opencv
+#this is important for capturing/displaying images
+from opencv import highgui 
+
+camera = highgui.cvCreateCameraCapture(0)
+def get_image():
+    im = highgui.cvQueryFrame(camera)
+    # Add the line below if you need it (Ubuntu 8.04+)
+    #im = opencv.cvGetMat(im)
+    #convert Ipl image to PIL image
+    return opencv.adaptors.Ipl2PIL(im) 
+
+fps = 30.0
+pygame.init()
+window = pygame.display.set_mode((640,480))
+pygame.display.set_caption("WebCam Demo")
+screen = pygame.display.get_surface()
+
+while True:
+    events = pygame.event.get()
+    for event in events:
+        if event.type == QUIT or event.type == KEYDOWN:
+            sys.exit(0)
+    im = get_image()
+    pg_img = pygame.image.frombuffer(im.tostring(), im.size, im.mode)
+    screen.blit(pg_img, (0,0))
+    pygame.display.flip()
+    pygame.time.delay(int(1000 * 1.0/fps))
