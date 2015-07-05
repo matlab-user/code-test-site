@@ -1,10 +1,15 @@
 <?PHP
   $num_arr = array();
 
+  $fname = 'nums.dat';
+  list($min_v, $max_v) = find_min_max( $fname );
+  return;
+
+/*
   $arr_num = 10000;
   for( $i=0; $i<$arr_num; $i++ )
     $num_arr[$i] = rand( -10000, 20000 );
-
+*/
   echo "start sorting!\r\n";
   $stime = microtime_float();
   fsort( 0, $arr_num-1 );
@@ -108,4 +113,63 @@
     return ((float)$usec + (float)$sec);
   }
 
+function read_out_arr( $fh ) {
+
+  $data_str = '';
+  $data_arr = array();
+
+  while( 1 ) {
+    $data_str = fread( $fh, 2*pow(2,20) );
+    if( empty($data_str) )
+      break;
+
+      $slen = strlen( $data_str );
+      $i = 0;
+      while( 1 ) {
+        if( ($i*4)>=$slen )
+          break;
+        $data_arr[] = unpack( "l", substr($data_str,$i*4,4) )[1];
+        $i++;
+      }
+      echo count($data_arr)."\r\n";
+      $data_str = '';
+  }
+
+  return $data_arr;
+}
+
+function find_min_max( $fname ) {
+
+  $fh = fopen( $fname, "rb" );
+  $res = [ 0, 0 ];
+
+  while( 1 ) {
+    $data_str = '';
+    $data_str = fread( $fh, 2*pow(2,20) );
+    if( empty($data_str) )
+      break;
+
+      $slen = strlen( $data_str );
+      $i = 0;
+      while( 1 ) {
+        if( ($i*4)>=$slen )
+          break;
+        $mid = unpack( "l", substr($data_str,$i*4,4) );
+        if( $mid[1]<$res[0] ) {
+          $res[0] = $mid[1];
+          $i++;
+          continue;
+        }
+
+        if( $mid[1]>$res[1] )
+          $res[1] = $mid[1];
+
+        $i++;
+      }
+  }
+
+  fclose( $fh );
+  //var_dump( $res );
+  return $res;
+}
 ?>
