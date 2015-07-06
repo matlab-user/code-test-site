@@ -5,7 +5,7 @@
 
   $fh = fopen( $fname, "wb+" );
 
-  $arr_num = 1.2*pow(2,20);
+  $arr_num = 0.25*pow(2,30);
   $data_str = '';
   for( $i=0; $i<$arr_num; $i++ ) {
     $d = rand(-$max,$max);

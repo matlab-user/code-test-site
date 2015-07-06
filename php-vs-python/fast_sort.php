@@ -1,18 +1,28 @@
 <?PHP
   $num_arr = array();
-
   $fname = 'nums.dat';
-  list($min_v, $max_v) = find_min_max( $fname );
-  return;
 
-/*
-  $arr_num = 10000;
-  for( $i=0; $i<$arr_num; $i++ )
-    $num_arr[$i] = rand( -10000, 20000 );
-*/
   echo "start sorting!\r\n";
   $stime = microtime_float();
-  fsort( 0, $arr_num-1 );
+
+  echo "STEP 1: find_min_max--------\r\n";
+  list($min_v, $max_v) = find_min_max( $fname );
+  $rd = range( $min_v, $max_v-1, 1024 );
+  $rd[] = $max_v;
+  $len = count( $rd );
+
+  foreach( $rd as $k => $v ) {
+    if( $k>=($len-1) )
+      break;
+
+    echo "STEP 2: get_range--------\r\n";
+    $num_arr = get_range( $v, $rd[$k+1], $fname );
+
+    echo "STEP 3: fast_sort--------\r\n";
+    fsort( 0, count($num_arr)-1 );
+    show_arr( $num_arr );
+  }
+
   $etime = microtime_float();
 
   $check_stime = microtime_float();
@@ -20,7 +30,6 @@
   $check_etime = microtime_float();
 
   if( $res==true ) {
-    show_arr( $num_arr );
     echo "\r\nUse ".($etime-$stime)."s to sort\r\n";
     echo "\r\nUse ".($check_etime-$check_stime)."s to check\r\n";
   }
@@ -85,6 +94,8 @@
         $i = 0;
       }
     }
+
+    echo "\r\n\r\n";
   }
 
   function sort_check( $arr ) {
@@ -112,31 +123,6 @@
     list($usec, $sec) = explode(" ", microtime());
     return ((float)$usec + (float)$sec);
   }
-
-function read_out_arr( $fh ) {
-
-  $data_str = '';
-  $data_arr = array();
-
-  while( 1 ) {
-    $data_str = fread( $fh, 2*pow(2,20) );
-    if( empty($data_str) )
-      break;
-
-      $slen = strlen( $data_str );
-      $i = 0;
-      while( 1 ) {
-        if( ($i*4)>=$slen )
-          break;
-        $data_arr[] = unpack( "l", substr($data_str,$i*4,4) )[1];
-        $i++;
-      }
-      echo count($data_arr)."\r\n";
-      $data_str = '';
-  }
-
-  return $data_arr;
-}
 
 function find_min_max( $fname ) {
 
@@ -172,4 +158,33 @@ function find_min_max( $fname ) {
   //var_dump( $res );
   return $res;
 }
+
+function get_range( $min_v, $max_v, $fname ) {
+
+  $fh = fopen( $fname, "rb" );
+  $res = [];
+
+  while( 1 ) {
+    $data_str = '';
+    $data_str = fread( $fh, 2*pow(2,20) );
+    if( empty($data_str) )
+      break;
+
+      $slen = strlen( $data_str );
+      $i = 0;
+      while( 1 ) {
+        if( ($i*4)>=$slen )
+          break;
+        $mid = unpack( "l", substr($data_str,$i*4,4) );
+        if( $mid[1]>=$min_v && $mid[1]<$max_v )
+          $res[] = $mid[1];
+
+        $i++;
+      }
+  }
+
+  fclose( $fh );
+  return $res;
+}
+
 ?>
