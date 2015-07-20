@@ -43,3 +43,5 @@ Temporary Items
 .apdisk
 
 *.dat
+
+opencv-3.0.0/*

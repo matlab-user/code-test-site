@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>css rot</title>	
+
+		<link rel='stylesheet' type='text/css' href='css/style.css'>
+		<script src='./js-lib/jquery-2.1.1.min.js'></script>
+		<script src='./my-js/state_block.js'></script>	
+		
+		<style type='text/css'>
+			#tab_main{width:340px;height:120px;background-image:url(default.jpg)}	
+			#tab_main:hover {
+				transition: all 0.7s;
+				-webkit-transform: rotate(31.4rad);
+				-ms-transform: rotate(31.4rad);
+				transform: rotate(31.4rad);
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id='tab_main'></div>
+	</body>
+</html>
