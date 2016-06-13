@@ -226,7 +226,7 @@ class DirtySprite(Sprite):
     def __init__(self, *groups):
         
         self.dirty = 1
-        self.blendmode = 0  # pygame 1.8, reffered as special_flags in 
+        self.blendmode = 0  # pygame 1.8, referred as special_flags in 
                             # the documentation of blit 
         self._visible = 1
         self._layer = 0    # READ ONLY by LayeredUpdates or LayeredDirty

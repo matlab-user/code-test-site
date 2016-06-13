@@ -187,7 +187,7 @@ class Dependency(object):
             raise BuildError("No source directory for %s" % self.name)
 
 class Preparation(object):
-    """Perform necessary build environment preperations"""
+    """Perform necessary build environment preparations"""
     
     def __init__(self, name, shell_script):
         self.name = name

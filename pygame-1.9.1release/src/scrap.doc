@@ -2,7 +2,7 @@ pygame.scrap
 pygame module for clipboard support.
 
 
-EXPERIMENTAL!: meaning this api may change, or dissapear in later 
+EXPERIMENTAL!: meaning this api may change, or disappear in later 
 pygame releases.  If you use this, your code will break with the 
 next pygame release.
 

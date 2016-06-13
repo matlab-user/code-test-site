@@ -112,7 +112,7 @@ axis('off')
 figure()
 imshow(im1)
 plot(box_trans[0,:],box_trans[1,:],linewidth=3)
-title('2D projection transfered with H')
+title('2D projection transferred with H')
 axis('off')
 
 figure()

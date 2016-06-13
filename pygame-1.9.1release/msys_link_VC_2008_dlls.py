@@ -103,7 +103,7 @@ class Dependency(object):
                              (self.name, return_code))
 
 class Preparation(object):
-    """Perform necessary build environment preperations"""
+    """Perform necessary build environment preparations"""
     
     def __init__(self, name, shell_script):
         self.name = name

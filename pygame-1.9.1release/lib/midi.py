@@ -254,7 +254,7 @@ class Input(object):
             raise OverflowError("long int too large to convert to int")
 
         # and now some nasty looking error checking, to provide nice error 
-        #   messages to the kind, lovely, midi using people of whereever.
+        #   messages to the kind, lovely, midi using people of wherever.
         if r:
             interf, name, input, output, opened = r
             if input:
@@ -396,7 +396,7 @@ class Output(object):
             raise OverflowError("long int too large to convert to int")
 
         # and now some nasty looking error checking, to provide nice error 
-        #   messages to the kind, lovely, midi using people of whereever.
+        #   messages to the kind, lovely, midi using people of wherever.
         if r:
             interf, name, input, output, opened = r
             if output:

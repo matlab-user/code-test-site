@@ -399,7 +399,7 @@ _get_scrap_owner (Atom *selection)
  * \param length Out parameter that contains the length of the returned
  * buffer.
  * \return The requested content or NULL in case no content exists or an
- * error occured.
+ * error occurred.
  */
 static char*
 _get_data_as (Atom source, Atom format, unsigned long *length)

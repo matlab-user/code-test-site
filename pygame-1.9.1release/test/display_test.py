@@ -266,7 +266,7 @@ class DisplayModuleTest( unittest.TestCase ):
           # 
           # Request the window for the display surface be iconified or hidden.
           # Not all systems and displays support an iconified display. The
-          # function will return True if successfull.
+          # function will return True if successful.
           # 
           # When the display is iconified pygame.display.get_active() will
           # return False. The event queue should receive a ACTIVEEVENT event

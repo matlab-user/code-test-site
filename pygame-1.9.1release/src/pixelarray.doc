@@ -135,7 +135,7 @@ PixelArray.compare (array, distance=0, weights=(0.299, 0.587, 0.114)): Return Pi
 
 Compares the contents of the PixelArray with those from the passed PixelArray.
 It returns a new PixelArray with a black/white color mask that indicates the
-differences (white) of both arrays. Both PixelArray objects must have indentical
+differences (white) of both arrays. Both PixelArray objects must have identical
 bit depths and dimensions.
 
 It uses a simple weighted euclidian distance formula to calculate the

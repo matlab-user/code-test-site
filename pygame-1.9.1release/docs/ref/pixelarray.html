@@ -142,7 +142,7 @@
 <big><b>PixelArray.compare</big></b><br><ul>
   <i>Compares the PixelArray with another one.</i><br>
   <tt>PixelArray.compare (array, distance=0, weights=(0.299, 0.587, 0.114)): Return PixelArray</tt><br>
-<p>Compares the contents of the PixelArray with those from the passed PixelArray. It returns a new PixelArray with a black/white color mask that indicates the differences (white) of both arrays. Both PixelArray objects must have indentical bit depths and dimensions. </p>
+<p>Compares the contents of the PixelArray with those from the passed PixelArray. It returns a new PixelArray with a black/white color mask that indicates the differences (white) of both arrays. Both PixelArray objects must have identical bit depths and dimensions. </p>
 <p>It uses a simple weighted euclidian distance formula to calculate the distance between the colors. The distance space ranges from <tt>0.0</tt> to <tt>1.0</tt> and is used as threshold for the color detection. This causes the comparision to mark pixels with a similar, but not exactly identical color, as black. </p>
 <p>New in pygame <tt>1.8.1</tt>. </p>
 <!--COMMENTS:PixelArray.compare--> &nbsp;<br> 

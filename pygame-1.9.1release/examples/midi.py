@@ -661,7 +661,7 @@ class Keyboard(object):
         """
 
         # Keys are entered in a list, where index is Midi note. Since there are
-        # only 128 possible Midi notes the list length is managable. Unassigned
+        # only 128 possible Midi notes the list length is manageable. Unassigned
         # note positions should never be accessed, so are set None to ensure
         # the bug is quickly detected.
         #
