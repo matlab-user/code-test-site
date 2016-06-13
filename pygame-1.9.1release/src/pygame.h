@@ -531,7 +531,7 @@ typedef struct {
 
 
 /* RWOBJECT */
-/*the rwobject are only needed for C side work, not accessable from python*/
+/*the rwobject are only needed for C side work, not accessible from python*/
 #define PYGAMEAPI_RWOBJECT_FIRSTSLOT                            \
     (PYGAMEAPI_EVENT_FIRSTSLOT + PYGAMEAPI_EVENT_NUMSLOTS)
 #define PYGAMEAPI_RWOBJECT_NUMSLOTS 4

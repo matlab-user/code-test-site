@@ -866,7 +866,7 @@ May 30, 2007
 
 May 9, 2007
     Windows image copy/paste is working for scrap.
-    Adding bitmask code from Ulf Ekström - for pixelperfect collision.
+    Adding bitmask code from Ulf Ekstrï¿½m - for pixelperfect collision.
       Still need to get unittest, documentation and some more methods added.
       There's a unittest with some problems checked in.
 
@@ -1205,7 +1205,7 @@ August 20, 2002
     fix rectstyle arguments
 
 August 15, 2002
-    Hervé Cauwelier's fix for xbm cursors without spaces
+    Hervï¿½ Cauwelier's fix for xbm cursors without spaces
 
 Auguest 14, 2002
     switched to FSF's FreeSansBold default font
@@ -1477,7 +1477,7 @@ Jul 10, 2001
     image.tostring makes alpha from colorkey, if asking for RGBA
 
 Jul 6, 2001
-    added python 1.5.2 compatability
+    added python 1.5.2 compatibility
 
 June 25, 2001
     horizontal transform.flip() was reading pixels off by one [BUG]

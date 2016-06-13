@@ -64,9 +64,9 @@
 
      Richard Goedeken for his smoothscale function.
 
-     Ulf Ekström for his pixel perfect collision detection code.
+     Ulf Ekstrï¿½m for his pixel perfect collision detection code.
 
-     Pete Shinners - orginal author.
+     Pete Shinners - original author.
 
 
      David Clark - for filling the right-hand-man position
@@ -92,7 +92,7 @@
 
      Thanks to those sending in patches and fixes: Niki Spahiev, Gordon
    Tyler, Nathaniel Pryce, Dave Wallace, John Popplewell, Michael Urman,
-   Andrew Straw, Michael Hudson, Ole Martin Bjoerndalen, Hervé Cauwelier,
+   Andrew Straw, Michael Hudson, Ole Martin Bjoerndalen, Hervï¿½ Cauwelier,
    James Mazer, Lalo Martins, Timothy Stranex, Chad Lester, Matthias
    Spiller, Bo Jangeborg, Dmitry Borisov, Campbell Barton, Diego Essaya,
    Eyal Lotem, Regis Desgroppes, Emmanuel Hainry, Randy Kaelber

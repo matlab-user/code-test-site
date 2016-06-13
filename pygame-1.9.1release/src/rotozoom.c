@@ -427,7 +427,7 @@ void rotozoomSurfaceSizeTrig(int width, int height, double angle,
 }
 
 
-/* Publically available rotozoom-size function */
+/* Publicly available rotozoom-size function */
 
 void rotozoomSurfaceSize(int width, int height, double angle,
                                 double zoom, int *dstwidth, int *dstheight)
@@ -475,7 +475,7 @@ void zoomSurfaceSize(int width, int height, double zoomx, double zoomy,
 }
 
 
-/* Publically available rotozoom function */
+/* Publicly available rotozoom function */
 
 SDL_Surface *rotozoomSurface(SDL_Surface * src, double angle,
                                     double zoom, int smooth)

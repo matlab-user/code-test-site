@@ -1158,7 +1158,7 @@ _color_set_hsla (PyColor *color, PyObject *value, void *closure)
 
     ht = hsla[0] / 360.f;
 
-    /* Calulate R */
+    /* Calculate R */
     h = ht + onethird;
     if (h < 0)
         h += 1;

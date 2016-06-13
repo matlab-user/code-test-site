@@ -163,7 +163,7 @@ class BaseModuleTest(unittest.TestCase):
         # get everything started. The init() functions for individual modules
         # will raise exceptions when they fail.
         # 
-        # You may want to initalise the different modules seperately to speed
+        # You may want to initalise the different modules separately to speed
         # up your program or to not use things your game does not.
         # 
         # It is safe to call this init() more than once: repeated calls will

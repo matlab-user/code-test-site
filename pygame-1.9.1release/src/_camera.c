@@ -23,7 +23,7 @@
  *
  * This module allows for use of v4l2 webcams in pygame.  The code is written
  * such that adding support for v4l or vfw cameras should be possible without
- * much modification of existing functions.  v4l2 functions are kept seperate
+ * much modification of existing functions.  v4l2 functions are kept separate
  * from functions available to pygame users and generic functions like
  * colorspace conversion.
  *

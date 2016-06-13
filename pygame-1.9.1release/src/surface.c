@@ -2211,7 +2211,7 @@ surface_do_overlap (SDL_Surface *src, SDL_Rect *srcrect,
     return dstoffset < span || dstoffset > src->pitch - span;
 }
 
-/*this internal blit function is accessable through the C api*/
+/*this internal blit function is accessible through the C api*/
 int 
 PySurface_Blit (PyObject * dstobj, PyObject * srcobj, SDL_Rect * dstrect,
                 SDL_Rect * srcrect, int the_args)

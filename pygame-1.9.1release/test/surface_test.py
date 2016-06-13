@@ -928,7 +928,7 @@ class SurfaceTypeTest(unittest.TestCase):
         finally:
             pygame.quit()
 
-        # Remaining, non-pallete, cases.
+        # Remaining, non-palette, cases.
         c = (128, 64, 12, 255)
         formats = [(0, 16), (0, 24), (0, 32),
                    (SRCALPHA, 16), (SRCALPHA, 32)]

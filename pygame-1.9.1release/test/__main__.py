@@ -90,7 +90,7 @@ opt_parser.add_option (
      help   = "include tests requiring user input")
 
 ###########################################################################
-# Set run() keyword arguements according to command line arguemnts.
+# Set run() keyword arguments according to command line arguemnts.
 # args will be the test module list, passed as positional argumemts.
 
 options, args = opt_parser.parse_args()

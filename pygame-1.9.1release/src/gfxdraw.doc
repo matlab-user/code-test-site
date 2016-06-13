@@ -1,7 +1,7 @@
 pygame.gfxdraw
 pygame module for drawing shapes
 
-Wraps SDL_gfx primatives.
+Wraps SDL_gfx primitives.
 
 EXPERIMENTAL!: meaning this api may change, or dissapear in later 
 pygame releases.  If you use this, your code will break with the 

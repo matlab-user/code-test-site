@@ -198,7 +198,7 @@ typedef struct {
 #define PyArray_FromDims_NUM 12
 
 /* array_from_existing_data = PyArray_FromDimsAndData(n_dims, dims[n_dims], item_type, old_data); */
-/* WARNING: using PyArray_FromDimsAndData is not reccommended!  It should only be used to refer to */
+/* WARNING: using PyArray_FromDimsAndData is not recommended!  It should only be used to refer to */
 /* global arrays that will never be freed (like FORTRAN common blocks). */
 #define PyArray_FromDimsAndData_RET PyObject *
 #define PyArray_FromDimsAndData_PROTO (int, int *, int, char *)
@@ -256,7 +256,7 @@ typedef struct {
 #define PyArray_Free_NUM 23
 
 /* array_from_existing_data = PyArray_FromDimsAndDataAndDescr(n_dims, dims[n_dims], descr, old_data); */
-/* WARNING: using PyArray_FromDimsAndDataAndDescr is not reccommended!  It should only be used to refer to */
+/* WARNING: using PyArray_FromDimsAndDataAndDescr is not recommended!  It should only be used to refer to */
 /* global arrays that will never be freed (like FORTRAN common blocks). */
 #define PyArray_FromDimsAndDataAndDescr_RET PyObject *
 #define PyArray_FromDimsAndDataAndDescr_PROTO (int, int *, PyArray_Descr *, char *)
